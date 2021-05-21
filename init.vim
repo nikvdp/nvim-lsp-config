@@ -35,6 +35,29 @@ EOF
 
 
 colorscheme PaperColor
+set number
+set relativenumber
+set ignorecase      " ignore case
+set smartcase     " but don't ignore it, when search string contains uppercase letters
+set nocompatible
+set incsearch        " do incremental searching
+set visualbell
+set expandtab
+set tabstop=4
+set nocompatible
+set ruler
+set smartindent
+set shiftwidth=4
+syntax on
+set hlsearch
+set virtualedit=all
+set ignorecase
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set tabstop=4
+set number        " line numbers
+set autoindent
+set mouse=a  " mouse support
+
 
 " Lsp key bindings
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
