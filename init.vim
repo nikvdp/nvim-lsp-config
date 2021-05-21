@@ -1,20 +1,38 @@
-call plug#begin('~/.vim/plugged')
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'kabouzeid/nvim-lspinstall'
-    Plug 'glepnir/lspsaga.nvim'
-    Plug 'hrsh7th/nvim-compe'
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+lua <<EOF
 
-    " status bar
-    Plug 'glepnir/galaxyline.nvim'
+plugins = {
+        "nvim-lua/plenary.nvim",
+        "nvim-lua/popup.nvim",
+        "nvim-telescope/telescope.nvim",
+        "neovim/nvim-lspconfig",
+        "kabouzeid/nvim-lspinstall",
+        "glepnir/lspsaga.nvim",
+        "hrsh7th/nvim-compe",
+        {"nvim-treesitter/nvim-treesitter", "{'do': ':TSUpdate'}"},
+        "nvim-treesitter/nvim-treesitter-textobjects",
 
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'nikvdp/neomux'
-call plug#end()
+        "glepnir/galaxyline.nvim",
+
+        "NLKNguyen/papercolor-theme",
+        "nikvdp/neomux",
+
+	"tpope/vim-ragtag",
+	"tpope/vim-surround",
+	"tpope/vim-unimpaired",
+
+	"tpope/vim-eunuch",
+	"tpope/vim-fugitive",
+
+	"tomtom/tcomment_vim",
+
+}
+
+
+require("pluginloader")
+vim.cmd(gen_vimplug(vim.fn.stdpath("data") .. "/plugged", plugins))
+
+EOF
+
 
 colorscheme PaperColor
 
