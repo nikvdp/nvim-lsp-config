@@ -425,8 +425,8 @@ gls.right[10] = {
     }
 }
 
-gls.right[11] = {
-    Space = {
+gls.right[12] = {
+     Space = {
         provider = function()
             return ' '
         end,
@@ -435,6 +435,15 @@ gls.right[11] = {
         highlight = {colors.orange, colors.bg}
     }
 }
+
+local NeomuxProvider = {
+	Neomux = {
+		provider = function() return vim.api.nvim_exec([[echo "| W: " . WindowNumber() . " |"]], true) end,
+		separator = ' ',
+    } 
+}
+
+gls.right[11] =  NeomuxProvider
 
 gls.short_line_left[1] = {
     BufferType = {
@@ -450,4 +459,5 @@ gls.short_line_left[2] = {
 }
 
 gls.short_line_right[1] = {BufferIcon = {provider = 'BufferIcon', highlight = {colors.grey, colors.bg}}}
+gls.short_line_right[2] = NeomuxProvider
 EOF
