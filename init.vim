@@ -49,6 +49,10 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set autoindent
 set mouse=a  " mouse support
 
+
+" set leader key to ,
+let g:mapleader=","
+
 " >> Telescope bindings
 nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
 
@@ -101,4 +105,5 @@ lua <<EOF
 require("lsp")
 require("treesitter")
 require("statusbar")
+require("completion")
 EOF
