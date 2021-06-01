@@ -24,6 +24,10 @@ require'nvim-treesitter.configs'.setup {
 	  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects/blob/master/queries/c/textobjects.scm
           ["af"] = "@function.outer",
           ["if"] = "@function.inner",
+          ["ab"] = "@block.outer",
+          ["ib"] = "@block.inner",
+          ["as"] = "@statement.outer",
+          ["is"] = "@statement.inner",
         },
       },
     },
