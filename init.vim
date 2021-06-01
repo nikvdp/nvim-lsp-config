@@ -23,6 +23,7 @@ plugins = {
     "tpope/vim-eunuch",
     "tpope/vim-fugitive",
 
+    -- TODO: update to nerdcomment and add NerdCommentSettings() func (but not as func)
     "tomtom/tcomment_vim",
 
     }
