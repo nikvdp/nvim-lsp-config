@@ -23,7 +23,6 @@ plugins = {
     "tpope/vim-eunuch",
     "tpope/vim-fugitive",
 
-    -- TODO: update to nerdcomment and add NerdCommentSettings() func (but not as func)
     "tomtom/tcomment_vim",
 
     }
@@ -57,36 +56,43 @@ set backspace=indent,eol,start " allow backspacing over everything in insert mod
 set autoindent
 set mouse=a  " mouse support
 
-" Telescope bindings
-    nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
+" >> Telescope bindings
+nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
 
-    " most recentuly used files
-    nnoremap <Leader>m :lua require'telescope.builtin'.oldfiles{}<CR>
+" most recentuly used files
+nnoremap <Leader>m :lua require'telescope.builtin'.oldfiles{}<CR>
 
-    " find buffer
-    nnoremap ; :lua require'telescope.builtin'.buffers{}<CR>
+" find buffer
+nnoremap ; :lua require'telescope.builtin'.buffers{}<CR>
 
-    " find in current buffer
-    nnoremap <Leader>/ :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+" find in current buffer
+nnoremap <Leader>/ :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
 
-    " bookmarks
-    nnoremap <Leader>' :lua require'telescope.builtin'.marks{}<CR>
+" bookmarks
+nnoremap <Leader>' :lua require'telescope.builtin'.marks{}<CR>
 
-    " git files
-    nnoremap <Leader>f :lua require'telescope.builtin'.git_files{}<CR>
+" git files
+nnoremap <Leader>f :lua require'telescope.builtin'.git_files{}<CR>
 
-    " all files
-    nnoremap <Leader>bfs :lua require'telescope.builtin'.find_files{}<CR>
+" all files
+nnoremap <Leader>bfs :lua require'telescope.builtin'.find_files{}<CR>
 
-    " ripgrep like grep through dir
-    nnoremap <Leader>rg :lua require'telescope.builtin'.live_grep{}<CR>
+" ripgrep like grep through dir
+nnoremap <Leader>rg :lua require'telescope.builtin'.live_grep{}<CR>
 
-    " pick color scheme
-    nnoremap <Leader>cs :lua require'telescope.builtin'.colorscheme{}<CR>
+" pick color scheme
+nnoremap <Leader>cs :lua require'telescope.builtin'.colorscheme{}<CR>
 
 
+" >> setup nerdcomment key bindings
+let g:NERDCreateDefaultMappings = 0
+let g:NERDSpaceDelims = 1
 
-" Lsp key bindings
+xnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
+nnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
+
+
+" >> Lsp key bindings
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
@@ -97,8 +103,6 @@ nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>
 nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>
-
-set number relativenumber
 
 lua <<EOF
 require("lsp")
