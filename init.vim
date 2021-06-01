@@ -1,37 +1,30 @@
-lua <<EOF
+" >> load plugins
+call plug#begin(stdpath('data') . 'vimplug')
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'kabouzeid/nvim-lspinstall'
+    Plug 'glepnir/lspsaga.nvim'
+    Plug 'hrsh7th/nvim-compe'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-plugins = {
-    "nvim-lua/plenary.nvim",
-    "nvim-lua/popup.nvim",
-    "nvim-telescope/telescope.nvim",
-    "neovim/nvim-lspconfig",
-    "kabouzeid/nvim-lspinstall",
-    "glepnir/lspsaga.nvim",
-    "hrsh7th/nvim-compe",
-    {"nvim-treesitter/nvim-treesitter", "{'do': ':TSUpdate'}"},
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    Plug 'glepnir/galaxyline.nvim'
 
-    "glepnir/galaxyline.nvim",
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'nikvdp/neomux'
 
-    "NLKNguyen/papercolor-theme",
-    "nikvdp/neomux",
+    Plug 'tpope/vim-ragtag'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
 
-    "tpope/vim-ragtag",
-    "tpope/vim-surround",
-    "tpope/vim-unimpaired",
+    Plug 'tpope/vim-eunuch'
+    Plug 'tpope/vim-fugitive'
 
-    "tpope/vim-eunuch",
-    "tpope/vim-fugitive",
+    Plug 'tomtom/tcomment_vim'
+call plug#end()
 
-    "tomtom/tcomment_vim",
-
-    }
-
-
-require("pluginloader")
-Load_plugins(plugins)
-
-EOF
 
 
 colorscheme PaperColor
