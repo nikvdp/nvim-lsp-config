@@ -31,6 +31,14 @@ neovim fuzzy-finding capabilities on par with
 [ripgrep](https://github.com/BurntSushi/ripgrep) like searches across all
 the files in your project (or just the ones committed in git!).
 
+For a demo of the final setup's capabilities check the video:
+
+<p align="center">
+    <a target="_blank" href="https://youtu.be/7KVgMAd16NQ">
+        <img width="75%" src="https://github.com/nikvdp/nvim-lsp-config/blob/master/.github/screenshot.jpg">
+    </a>
+</p>
+
 # Installation
 
 This repo uses recently neovim-specific features, and as a result **this repo requires
