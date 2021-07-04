@@ -55,39 +55,39 @@ set mouse=a  " mouse support
 let g:mapleader=","
 
 " >> Telescope bindings
-nnoremap <Leader>pp :lua require'telescope.builtin'.builtin{}<CR>
+nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
 
-" most recentuly used files
-nnoremap <Leader>m :lua require'telescope.builtin'.oldfiles{}<CR>
+" most recently used files
+nnoremap <Leader>m <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 
 " find buffer
-nnoremap ; :lua require'telescope.builtin'.buffers{}<CR>
+nnoremap ; <cmd>lua require'telescope.builtin'.buffers{}<CR>
 
 " find in current buffer
-nnoremap <Leader>/ :lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
+nnoremap <Leader>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
 
 " bookmarks
-nnoremap <Leader>' :lua require'telescope.builtin'.marks{}<CR>
+nnoremap <Leader>' <cmd>lua require'telescope.builtin'.marks{}<CR>
 
 " git files
-nnoremap <Leader>f :lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <Leader>f <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " all files
-nnoremap <Leader>bfs :lua require'telescope.builtin'.find_files{}<CR>
+nnoremap <Leader>bfs <cmd>lua require'telescope.builtin'.find_files{}<CR>
 
 " ripgrep like grep through dir
-nnoremap <Leader>rg :lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <Leader>rg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 
 " pick color scheme
-nnoremap <Leader>cs :lua require'telescope.builtin'.colorscheme{}<CR>
+nnoremap <Leader>cs <cmd>lua require'telescope.builtin'.colorscheme{}<CR>
 
 
 " >> setup nerdcomment key bindings
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
 
-xnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
-nnoremap <Leader>ci :call NERDComment('n', 'toggle')<CR>
+xnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
+nnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
 
 
 " >> Lsp key bindings
