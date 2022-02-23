@@ -9,7 +9,7 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-    Plug 'NTBBloodbath/galaxyline.nvim', { 'branch': 'main' }
+    Plug 'NTBBloodbath/galaxyline.nvim', { 'branch': 'main' } "Maintained galaxyline
     Plug 'kyazdani42/nvim-web-devicons'  " needed for galaxyline icons
 
     Plug 'NLKNguyen/papercolor-theme'
