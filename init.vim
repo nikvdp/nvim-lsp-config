@@ -11,8 +11,9 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'williamboman/mason.nvim'
+    Plug 'williamboman/mason-lspconfig.nvim', { 'branch': 'main' }
     Plug 'neovim/nvim-lspconfig'
-    Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
     Plug 'tami5/lspsaga.nvim', { 'branch': 'main' }
     Plug 'hrsh7th/nvim-compe'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

@@ -70,19 +70,24 @@ local function documentHighlight(client, bufnr)
     end
 end
 
-local lsp_installer = require("nvim-lsp-installer")
+-- configure mason and it's LSP integration (provides the :LspInstall command)
+require("mason").setup()
+require("mason-lspconfig").setup()
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-lsp_installer.on_server_ready(function(server)
-    local opts = {}
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
+require("mason-lspconfig").setup_handlers {
+    -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
+    function(server_name)
+        if server_name then 
+            local lspconfig = require 'lspconfig'
+            lspconfig[server_name].setup {}
+        end
+    end,
+    -- You can also override the default handler for specific servers by providing them as keys, like so:
+    -- ["pyright"] = function()
+    --     -- for example, you could use the below to specify which python
+    --     -- interpreter you'd like to use with to use with pyright 
+    --     require "lspconfig".pyright.setup {
+    --         settings = {python = {pythonPath = "/Users/nik/miniconda3/bin/python"}}
+    --     }
     -- end
-
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
+}
